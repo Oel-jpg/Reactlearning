@@ -10,7 +10,7 @@ const TaskTag = ({name, color, id, onDelete}) => {
 
       <div className="w-xs h-10 rounded-xl bg-[black] 
         shadow-md shadow-blue-600 border-[2px] border-white p-3 flex flex-row items-center justify-between mb-2 cursor-pointer hover:scale-105 transition-all duration-200"
-        style={{'--tag-color': `#${color}`}}
+        style={{'--tag-color': `${color}`}}
         >     
             <div className="flex items-center justify-center">
               <h1 className="text-white text-center text-xs">{name}</h1>
