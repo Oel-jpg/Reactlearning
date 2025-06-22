@@ -5,19 +5,14 @@ import TaskTag from './TaskTag'
 const TaskBar = () => {
   const [tasks, settasks] = useState([]);
   const [tags, setTags] = useState([]);
-  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
   const handleTaskDelete = (deletedTaskId) => {
     settasks(tasks.filter(task => task.id !== deletedTaskId));
+    setTasks(data.slice(0, 10));
+     
   };
   const handleTagsDelete = (deletedTagId) => {
     setTags(tags.filter(tag => tag.id !== deletedTagId));
-  };
-
-  const refreshTasks = async () => {
-    const response = await fetch('http://localhost:8000/Tasks');
-    const data = await response.json();
-    setTasks(data.slice(0, 10));
   };
 
   useEffect (() => {
